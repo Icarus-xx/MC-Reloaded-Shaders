@@ -1,0 +1,73 @@
+Uniform list:
+  "sampler0"
+  "sampler1"
+  "sampler2"
+  "fogMode"
+  "renderType"
+  "sunPosition"
+  "moonPosition"
+  "heldLight.itemId"
+  "heldLight.magnitude"
+  "heldLight.specular"
+  "heldLight.itemId"
+  "heldLight.magnitude"
+  "aspectRatio"
+  "displayWidth"
+  "displayHeight"
+  "worldTime"
+  "near"
+  "far"
+
+Experimental uniforms:
+  "stepSampler[0-24]"
+        Intermediate samplers, used by the finals shaders to access to the previous rendered scenes.
+  "cleanDepth"
+        Depth of the current scene without clouds / without particles / without rain
+  "cleanDepth2"
+        Depth of the current scene with clouds / with particules / without rain
+  "cleanDepth3"
+        Depth of the current scene without clouds / with particules / without rain
+  "handItemId"
+        Current item id in the hand of the player, 0 if nothing in the hand.
+  "biomeType"
+        Rainforest: 1
+        Swampland: 2
+        Seasonal Forest: 3
+        Forest: 4
+        Savanna: 5
+        Shrubland: 6
+        Taiga: 7
+        Desert: 8
+        Plains: 9
+        Ice Desert: 10
+        Tundra: 11
+        Hell: 12
+        Sky: 13
+        unknown: -1
+  "health"
+        Integer from 0 to 20
+  "armor"
+        Integer from 0 to 20
+
+Beta Experimental uniforms:
+  "dimension"
+        Should be -1 for the nether, 0 normal world
+  "beenAttacked"
+        0 or 1
+  "inWater"
+        0: not in water, 1: in water
+  "isWet"
+        ?
+  "isBurning"
+        ?
+  "day"
+        ?
+  "raining"
+        ?
+  "rainingTransition"
+        ?
+  "rainingTime"
+        ?
+  "thundering"
+        ?
+
