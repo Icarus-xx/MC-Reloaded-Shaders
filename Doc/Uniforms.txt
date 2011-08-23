@@ -48,19 +48,9 @@ Experimental uniforms:
         Integer from 0 to 20
   "armor"
         Integer from 0 to 20
-
-Beta Experimental uniforms:
-  "dimension"
-        Should be -1 for the nether, 0 normal world
-  "beenAttacked"
-        0 or 1
   "inWater"
         0: not in water, 1: in water
   "isWet"
-        ?
-  "isBurning"
-        ?
-  "day"
         ?
   "raining"
         ?
@@ -69,5 +59,17 @@ Beta Experimental uniforms:
   "rainingTime"
         ?
   "thundering"
+        ?
+
+Beta Experimental uniforms:
+  "air"
+        -20 to 300
+  "dimension"
+        Should be -1 for the nether, 0 normal world
+  "beenAttacked"
+        0 or 1: seems useless
+  "isBurning"
+        ?
+  "day"
         ?
 
