@@ -372,8 +372,7 @@ if ((tex == 73) && renderType == 1)  {
 #endif
 
 /* Biome attribute */
-/*
-if (mc_Entity.a != -1) {
+/* if (mc_Entity.a != -1) {
             if (mc_Entity.a == 1.0 )       { gl_Position.z = 0.0; vertColor = vec4(0.0, 0.0, 1.0, 1.0); }
             else if (mc_Entity.a == 2.0 )  { gl_Position.z = 0.0; vertColor = vec4(0.0, 0.5, 1.0, 1.0); }
             else if (mc_Entity.a == 3.0 ) { gl_Position.z = 0.0; vertColor = vec4(0.5, 0.0, 1.0, 1.0); }
@@ -387,6 +386,21 @@ if (mc_Entity.a != -1) {
             else if (mc_Entity.a == 11.0 ) { gl_Position.z = 0.0; vertColor = vec4(0.0, 1.0, 0.5, 1.0); }
             else if (mc_Entity.a == 12.0 ) { gl_Position.z = 0.0; vertColor = vec4(0.5, 1.0, 0.5, 1.0); }
             else if (mc_Entity.a == 13.0 ) { gl_Position.z = 0.0; vertColor = vec4(1.0, 1.0, 1.0, 1.0); }
+*/
+/*
+            if (mc_Entity.a == 1.0 )       { vertColor = vec4(0.0, 0.0, 1.0, 1.0); }
+            else if (mc_Entity.a == 2.0 )  { vertColor = vec4(0.0, 0.5, 1.0, 1.0); }
+            else if (mc_Entity.a == 3.0 ) { vertColor = vec4(0.5, 0.0, 1.0, 1.0); }
+            else if (mc_Entity.a == 4.0 )  { vertColor = vec4(0.5, 0.5, 1.0, 1.0); }
+            else if (mc_Entity.a == 5.0 ) { vertColor = vec4(1.0, 0.0, 0.0, 1.0); }
+            else if (mc_Entity.a == 6.0 ) { vertColor = vec4(1.0, 0.5, 0.0, 1.0); }
+            else if (mc_Entity.a == 7.0 ) { vertColor = vec4(1.0, 0.0, 0.5, 1.0); }
+            else if (mc_Entity.a == 8.0 ) { vertColor = vec4(1.0, 0.5, 0.5, 1.0); }
+            else if (mc_Entity.a == 9.0 ) { vertColor = vec4(0.0, 1.0, 0.0, 1.0); }
+            else if (mc_Entity.a == 10.0 ) { vertColor = vec4(0.5, 1.0, 0.0, 1.0); }
+            else if (mc_Entity.a == 11.0 ) { vertColor = vec4(0.0, 1.0, 0.5, 1.0); }
+            else if (mc_Entity.a == 12.0 ) { vertColor = vec4(0.5, 1.0, 0.5, 1.0); }
+            else if (mc_Entity.a == 13.0 ) { vertColor = vec4(1.0, 1.0, 1.0, 1.0); }
 }
 */
 
