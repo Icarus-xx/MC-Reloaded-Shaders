@@ -64,6 +64,14 @@ Experimental uniforms:
 Beta Experimental uniforms:
   "air"
         -20 to 300
+  "posX"
+  "posY"
+  "posZ"
+        ingame coord of the player (like in F3 debug screen)
+  "motionX"
+  "motionY"
+  "motionZ"
+        ?
   "dimension"
         Should be -1 for the nether, 0 normal world
   "beenAttacked"
