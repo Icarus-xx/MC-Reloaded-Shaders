@@ -27,6 +27,8 @@ Experimental uniforms:
         Depth of the current scene with clouds / with particules / without rain
   "cleanDepth3"
         Depth of the current scene without clouds / with particules / without rain
+  "envMap"
+        envmap ?
   "handItemId"
         Current item id in the hand of the player, 0 if nothing in the hand.
   "biomeType"
@@ -67,17 +69,18 @@ Beta Experimental uniforms:
   "posX"
   "posY"
   "posZ"
-        ingame coord of the player (like in F3 debug screen)
+        not tested: ingame coord of the player (like in F3 debug screen)
   "motionX"
   "motionY"
   "motionZ"
-        ?
+        not tested: ? walking value is between -0.12 and +0.12,
+                    staying stil the value is 0, or near 0, or 0.078... for motionY
   "dimension"
-        Should be -1 for the nether, 0 normal world
+        not tested: Should be -1 for the nether, 0 normal world
   "beenAttacked"
-        0 or 1: seems useless
+        not tested: 0 or 1 (seems useless)
   "isBurning"
-        ?
+        not tested: 0 or 1 or ?
   "day"
         ?
 

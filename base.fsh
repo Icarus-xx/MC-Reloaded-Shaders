@@ -219,7 +219,7 @@ float shadow_term=1.0;
 							if (coord.t < minCoord.t) {	coord.t += 0.0625;	} else if (coord.t >= maxCoord.t) {	coord.t -= 0.0625;	}
 						}
 					
-				#ifdef ENABLE_PARALLAX_SELFSHADOW
+				    #ifdef ENABLE_PARALLAX_SELFSHADOW
 					//light trace step vector
 					vec3 lt_delta = -lightVector * intervalMult * SELFSHADOW_ROUGHNESS;
 //					//Initialize by doing 1 step (otherwise were still below depth from prior trace)
@@ -348,16 +348,16 @@ float shadow_term=1.0;
 				}
 			}
 			#endif
-			
-		} else {			
+
+		} else {
 				 baseColor = texture2D(sampler0, coord.st) * vertColor;
-		} 			
-	#else	
-		baseColor = texture2D(sampler0, coord.st) * vertColor;	
+		}
+	#else
+		baseColor = texture2D(sampler0, coord.st) * vertColor;
 	#endif  // _ENABLE_BUMP_MAPPING
-	gl_FragColor = baseColor + vC;			
+	gl_FragColor = baseColor + vC;
 #else  // ENABLE_GL_TEXTURE_2D
-	gl_FragColor = vertColor;	
+	gl_FragColor = vertColor;
 #endif // ENABLE_GL_TEXTURE_2D
   
 #ifdef ENABLE_FOG
