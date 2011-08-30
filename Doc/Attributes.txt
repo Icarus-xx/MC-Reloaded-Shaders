@@ -1,0 +1,12 @@
+Attributes:
+    mc_Entity:
+        x = BlockID
+        y = same as original GLSL Mod (see: http://daxnitro.wikia.com/wiki/Shaders)
+        z = 
+        w = BiomeID (possible values are the same as the ones for the Uniform Biome)
+
+    mc_Entity2:
+        x = 0 or 1 depending on the ability of the block to see the sky
+        y = 
+        z = 
+        w = Metadata of the block

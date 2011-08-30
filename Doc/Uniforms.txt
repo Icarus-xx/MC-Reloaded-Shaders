@@ -53,15 +53,17 @@ Experimental uniforms:
   "inWater"
         0: not in water, 1: in water
   "isWet"
-        ?
+        0 or 1
   "raining"
-        ?
+        0 or 1
   "rainingTransition"
-        ?
+        from 0 to 100.
+        when the rain starts, this counter is incremented until it reach 100.
+        units are the same as the ingame worldtime.
   "rainingTime"
-        ?
+        last worldtime value when the rain has started.
   "thundering"
-        ?
+        0 or 1
 
 Beta Experimental uniforms:
   "air"
@@ -75,8 +77,6 @@ Beta Experimental uniforms:
   "motionZ"
         not tested: ? walking value is between -0.12 and +0.12,
                     staying stil the value is 0, or near 0, or 0.078... for motionY
-  "dimension"
-        not tested: Should be -1 for the nether, 0 normal world
   "beenAttacked"
         not tested: 0 or 1 (seems useless)
   "isBurning"
