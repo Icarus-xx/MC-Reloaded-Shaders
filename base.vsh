@@ -128,7 +128,8 @@ void main() {
 //      float t1 = float(mod(worldTime, 1000))/400.0;
 		t /= 400.0 - ( wR * ( 100.0 + ( wT * 200.0 )));
        vec2 pos = position.xz/16.0;
-            position.y += ((cos((PI*2.0)*(2.0 * (pos.x + pos.y) + PI * t)) + 0.2) *  (1.0 + ((1.0+wT*2.0)*rT)))/WAVE_PITCH;
+            position.y += (cos((PI*2.0)*( 2.0 * (pos.x + pos.y) + PI * t)) + 0.2 - 2.6*rT )/WAVE_PITCH * (1.0 + ((1.0+wT*4.0)*rT));
+            position.y += cos(2.0*PI*(pos.y + pos.x + rT) + 2.0*PI * t) * rT*WAVE_PITCH/50.0;
     }
 #endif
 
