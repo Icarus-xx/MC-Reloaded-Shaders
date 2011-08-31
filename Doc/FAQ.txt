@@ -1,0 +1,37 @@
+
+Unsorted FAQ
+~~~~~~~~~~~~
+
+Q: Why the buttons in the video settings does not change when I click on them ?
+A: This is an old bug coming from the original GLSL Mod, we hope you can live with it :)
+
+Q: How many final shaders can I chain ?
+A: Well, there is no internal hard limit, but 20 MUST be the limit.
+
+Q: My preference file is not taken in account in my final shaders ?
+A: Check that the prefs file has a [finalXX] section (even empty) for each files in your shaders directory.
+
+Q: Does this mod will work with XXX mod ?
+A: We dont know. We are doing our best to incrase the compatibility but it is not our first priority.
+   Perhaps we will release some compatibility version or patch, but nothing is planned.
+
+Q: Why everything is really dark ?
+A: For the best results, you need to adjust some shaders preferences to match your texture pack.
+   Do not forget to share your prefs ;)
+
+Q: Why my screen is gray or white after reloading the shaders ?
+A: This a known bug, here is a workaround, resize the Minecraft window and voila.
+
+Q: Is it working on SMP ?
+A: Yes.
+
+Q: Is there an easier way to change the parameters of the shaders ?
+A: No. Nothing planned in the future.
+
+Q: Why the water has waves directions with direction changes ?
+A1: The water waves are depending on biomes and weather.
+A2: This coming from a calculation included in the waving algorythm. Feel free to change or update it :)
+
+Q: Minecraft Error XXX:
+A: Please do not complain :p
+
