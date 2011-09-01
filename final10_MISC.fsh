@@ -13,24 +13,24 @@ uniform int worldTime;
 vec4 TexCoord0 = gl_TexCoord[0];
 
 float getTime() {
-		float DAY = 0.8;
-		float time;
+        float DAY = 0.8;
+        float time;
 
-		if (worldTime >= 22000) {
-			time = clamp((float(24000-worldTime))/10000.0, 0.0, 1.0);
-			DAY = 0.8 + time;
-		} else if (worldTime >= 13000) {
-			time = clamp ((float(14000-worldTime))/5000.0, 0.0, 1.0);
-			DAY = 1.0 - time;
-		}
-		return DAY;
-	}
+        if (worldTime >= 22000) {
+            time = clamp((float(24000-worldTime))/10000.0, 0.0, 1.0);
+            DAY = 0.8 + time;
+        } else if (worldTime >= 13000) {
+            time = clamp ((float(14000-worldTime))/5000.0, 0.0, 1.0);
+            DAY = 1.0 - time;
+        }
+        return DAY;
+    }
 
 void main() {
- 	vec4 baseColor = texture2D( sampler0, TexCoord0.st );
+     vec4 baseColor = texture2D( sampler0, TexCoord0.st );
 
 #ifdef GAMMA
-	float G = GAMMA * getTime();
+    float G = GAMMA * getTime();
     if (baseColor[3] == 0.0) {
         baseColor = gl_Fog.color;
     }
@@ -40,7 +40,7 @@ void main() {
 #endif
 
 #ifdef THERMAL_VISION
-if (handItemId == thermal_vision_itemid)
+if (handItemId == 3)
 {
     vec2 uv = TexCoord0.xy;
     vec3 pixcol = baseColor.rgb;
@@ -102,8 +102,8 @@ if (handItemId == thermal_vision_itemid)
 #endif
 
 #ifdef WANT_PIXELS
-    const float pixel_w = wp_pixel_width; // 15.0
-    const float pixel_h = wp_pixel_height; // 10.0
+    const float pixel_w = 8.0; // 15.0
+    const float pixel_h = 4.0; // 10.0
 
     vec2 uv2 = TexCoord0.xy;
     float dx = pixel_w*(1./displayWidth);
