@@ -43,7 +43,7 @@ Experimental uniforms:
         Plains: 9
         Ice Desert: 10
         Tundra: 11
-        Hell: 12
+        Hell: 12 - Also counts as the Nether
         Sky: 13
         unknown: -1
   "health"
@@ -51,7 +51,7 @@ Experimental uniforms:
   "armor"
         Integer from 0 to 20
   "inWater"
-        0: not in water, 1: in water
+        0: not in water, 1: in water - Returns 1 as soon as the player's feet are in the water
   "isWet"
         0 or 1
   "raining"
