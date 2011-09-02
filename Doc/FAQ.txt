@@ -11,10 +11,6 @@ A: Well, there is no internal hard limit, but 20 MUST be the limit.
 Q: My preference file is not taken in account in my final shaders ?
 A: Check that the prefs file has a [finalXX] section (even empty) for each files in your shaders directory.
 
-Q: Does this mod will work with XXX mod ?
-A: We dont know. We are doing our best to incrase the compatibility but it is not our first priority.
-   Perhaps we will release some compatibility version or patch, but nothing is planned.
-
 Q: Why everything is really dark ?
 A: For the best results, you need to adjust some shaders preferences to match your texture pack.
    Do not forget to share your prefs ;)
@@ -31,6 +27,20 @@ A: No. Nothing planned in the future.
 Q: Why the water has waves directions with direction changes ?
 A1: The water waves are depending on biomes and weather.
 A2: This coming from a calculation included in the waving algorythm. Feel free to change or update it :)
+
+Q: Does this mod will work with XXX mod ?
+A: We dont know. We are doing our best to incrase the compatibility but it is not our first priority.
+   Perhaps we will release some compatibility version or patch, but nothing is planned.
+
+Q: List of compatible mods:
+A: - ModLoader without installing the cv.class (tested)
+   - Single Player Commands (tested)
+   - ZanMinimap (tested)
+   - Rei's Minimap (tested)
+   - Dynamic Lights using the modloader version with the provided merged class (tested)
+   - Connected Texture Mod (should work, not tested)
+   - Randomobs (should work, not tested)
+   - Zombe's modpack without installing the gv.class (should work, not tested)
 
 Q: Minecraft Error XXX:
 A: Please do not complain :p
