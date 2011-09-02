@@ -1,8 +1,10 @@
-
 Issue: Some part of my world are not rendering fine or are missing (like missing or broken chunks).
 Solution: Disable "Advanced OpenGL" in the video settings.
 
 Issue: White or gray screen after reloading the shaders.
 Solution: This is only a workaround, resize your Minecraft window.
+
+Issue: Error message: java.lang.SecurityException: SHA1 digest error for XXX
+Solution: Delete the META-INF directory from the minecraft.jar file.
 
 
