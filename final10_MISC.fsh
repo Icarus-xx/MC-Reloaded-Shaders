@@ -49,7 +49,7 @@ main ()
 #endif
 
 #ifdef THERMAL_VISION
-    if (handItemId == 3)
+    if (handItemId == thermal_vision_itemid)
     {
         vec2 uv = TexCoord0.xy;
         vec3 pixcol = baseColor.rgb;
@@ -120,8 +120,8 @@ main ()
 #endif
 
 #ifdef WANT_PIXELS
-    const float pixel_w = 8.0;  // 15.0
-    const float pixel_h = 4.0;  // 10.0
+    const float pixel_w = wp_pixel_width;  // 15.0
+    const float pixel_h = wp_pixel_height;  // 10.0
 
     vec2 uv2 = TexCoord0.xy;
     float dx = pixel_w * (1. / displayWidth);

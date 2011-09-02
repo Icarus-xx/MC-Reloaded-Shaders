@@ -203,18 +203,21 @@ main ()
 #endif
 
 #ifdef HEAT_HAZE
-    if (biomeType == 5 || biomeType == 8 || biomeType == 12)
+    for (int cpt=0; cpt<heatHazeBiomes.length(); cpt++)
     {
-        float n =
-            noise3f (vec3
-                     (t * baseColor.r * 0.2, t * baseColor.g * 0.2,
-                      t * baseColor.b * 0.2)) * 0.003;
+        if (heatHazeBiomes[cpt] == biomeType)
+        {
+            float n =
+                noise3f (vec3
+                         (t * baseColor.r * 0.2, t * baseColor.g * 0.2,
+                          t * baseColor.b * 0.2)) * 0.003;
 
-        vec4 distort =
-            texture2D (sampler0, TexCoord0.st + vec2 (-2.0 * n, -n));
-        baseColor =
-            mix (baseColor, distort,
-                 getTime () * getMaskFromDepth (TexCoord0.st) * 0.5);
+            vec4 distort =
+                texture2D (sampler0, TexCoord0.st + vec2 (-2.0 * n, -n));
+            baseColor =
+                mix (baseColor, distort,
+                     getTime () * getMaskFromDepth (TexCoord0.st) * 0.5);
+        }
     }
 #endif
 
