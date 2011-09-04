@@ -7,6 +7,7 @@
 // To disable a particular feature of this shader, add two forward slashes to the beginning its line:
 
 #define ENABLE_PARALLAX_OCCLUSION
+// Specular and Environment reflections both require a normal map ( terrain_nh ) to be present in order to work.
 #define ENABLE_SPECULAR_MAPPING
 #define ENABLE_ENV_REFLECTIONS
 //#define ENABLE_FOG
@@ -17,7 +18,7 @@
 
 
 #ifdef ENABLE_PARALLAX_OCCLUSION
-const float HEIGHT_MULT = 1.25; // Height multiplier for the bump map/
+const float HEIGHT_MULT = 1.25; // Height multiplier for the bump map
 const float PARALLAX_OCCLUSION_SHADOW_MULT = .75;   // Multiplier for the shadowing effect, in the vaities of the bump texture. Note this won't look good on relatively "flat" bump maps, with low alpha values ( alpha value define the height )
                                                                                                             // 0 for no effect, 1.0 for full effect, beyond 1.0 is achievable
 
@@ -52,7 +53,7 @@ in vec3 viewVector;
 in vec3 viewVectorSpec;
 in vec3 normal;
 
-const float MAX_DISTANCE = 100.0;
+const float MAX_DISTANCE = 50.0;
 const int MAX_POINTS = 50;
 
 #ifdef ENABLE_PARALLAX_OCCLUSION
@@ -315,6 +316,8 @@ main ()
 
         if (tSize > 16)
         {
+            float fallof =
+                 1.0 - min ( distance / MAX_DISTANCE, 1.0);
             N = normalize (gl_NormalMatrix * normal);
             vec3 r = reflect (-V, bump + (N * vec3 (0.2, -0.2, 0.2)));
             float m =
@@ -327,9 +330,7 @@ main ()
             vec4 reflColor = texture2D (envMap, disp.st);
             baseColor =
                 mix (baseColor, reflColor,
-                     vertColor.r * REFL_MULTIPLIER * R * texture2D (envMap,
-                                                                    coord.st).
-                     a);
+                     fallof * vertColor.r * REFL_MULTIPLIER * R * texture2D (envMap, coord.st).a);
         }
 #endif
 
@@ -344,14 +345,12 @@ main ()
             vec4 specular = texture2D (sampler2, coord.st);
             float intensity =
                 1.0 - min (1.3 * distance / heldLight.magnitude, 1.0);
-            intensity = intensity;
             baseColor =
                 mix (baseColor,
                      texture2D (sampler0,
                                 coord.st) * heldLight.specular *
                      clamp (vertColor + intensity * dot (V, bump), 0.0, 1.0),
                      clamp (intensity * dot (V, bump), 0.0, 1.0));
-            // baseColor +=  texture2D(sampler0, coord.st)*heldLight.specular * clamp( intensity * dot(V, bump) , 0.0, 1.0);
             if (specular.rgb != vec3 (0.0, 0.0, 0.0))
             {
                 float shininess = 20.0 * texture2D (sampler2, coord.st).a;
@@ -359,11 +358,13 @@ main ()
                 if (useCelestialSpecularMapping > 0.5)
                 {
                     vec3 H = normalize (L + V);
+                    float celestialFallof =
+                        1.0 - min ( distance / MAX_DISTANCE, 1.0);
                     float s =
                         pow (max (0.0, dot (reflect (L, bump), V)),
                              shininess);
                     baseColor +=
-                        max (specular * s * shininess * specMultiplier, 0.0);
+                        max (celestialFallof * specular * s * shininess * specMultiplier, 0.0);
                 }
                 float s =
                     pow (max (0.0, dot (reflect (-V, bump), V)), shininess);

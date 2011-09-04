@@ -149,7 +149,6 @@ main ()
                             && mc_Entity.x != 33.0 && mc_Entity.x != -1
                             && renderType == 0))
     {
-// float t1 = float(mod(worldTime, 1000))/400.0;
         t /= 400.0 - (wR * (100.0 + (wT * 200.0)));
         vec2 pos = position.xz / 16.0;
         position.y +=
@@ -189,26 +188,11 @@ main ()
             position.z -= (sin(PI2*(1.0*pos.x + pos.y - 1.5*t))*float(wRTransition+200)/200.0 + 0.3) / 8.0; */
 
             position.x -=
-                ((sin (PI2 * (2.0 * pos.x + pos.y - 3.0 * t)) + 0.6) * (1.0 +
-                                                                        ((3.0
-                                                                          +
-                                                                          (wT
-                                                                           *
-                                                                           6.0))
-                                                                         *
-                                                                         rT)))
-                / 24.0;
+                ((sin (PI2 * (2.0 * pos.x + pos.y - 3.0 * t)) + 0.6) * (1.0 + ((3.0 + (wT * 6.0)) * rT))) / 24.0;
             position.y -=
-                ((sin (PI2 * (3.0 * pos.x + pos.y - 4.0 * t)) + 1.2) * (1.0 +
-                                                                        ((1.0
-                                                                          +
-                                                                          wT)
-                                                                         *
-                                                                         rT)))
-                / 32.0;
+                ((sin (PI2 * (3.0 * pos.x + pos.y - 4.0 * t)) + 1.2) * (1.0 + ((1.0 + wT) * rT))) / 32.0;
             position.z -=
                 (sin (PI2 * (1.0 * pos.x + pos.y - 1.5 * t)) + 0.3) / 8.0;
-
         }
     }
 #endif

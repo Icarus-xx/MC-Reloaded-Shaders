@@ -7,4 +7,11 @@ Solution: This is only a workaround, resize your Minecraft window.
 Issue: Error message: java.lang.SecurityException: SHA1 digest error for XXX
 Solution: Delete the META-INF directory from the minecraft.jar file.
 
+Issue: pitch black or bright burn display upon loading another world
+Solution: Workaround - exit and re-launch Minecraft.
 
+Issue: Halp! I see no specular/envionment reflections, but I enabled the options in the base.fsh.
+Solution: Check if you actually have a terrain_nh in your texture pack. Both fonctions require it.
+
+Issue: I don't like your bloom so I de-activated it. Now everything is blurry!
+Solution: the Bloom shader uses the two previous shaders named "BLUR_FP" and "BLUR_SP" to compute its effect. If you don't want the bloom, please also de-activate the two Blur shaders!

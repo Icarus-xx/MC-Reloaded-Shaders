@@ -8,6 +8,10 @@ A: This is an old bug coming from the original GLSL Mod, we hope you can live wi
 Q: How many final shaders can I chain ?
 A: Well, there is no internal hard limit, but 20 MUST be the limit.
 
+Q: How can I add shaders?
+A: You will have to increment the existing shaders, both by renaming them and in the preference file.
+    Note that, for now, you can't really "push" anything before the Bloom shader.
+
 Q: My preference file is not taken in account in my final shaders ?
 A: Check that the prefs file has a [finalXX] section (even empty) for each files in your shaders directory.
 
@@ -29,7 +33,7 @@ A1: The water waves are depending on biomes and weather.
 A2: This coming from a calculation included in the waving algorythm. Feel free to change or update it :)
 
 Q: Does this mod will work with XXX mod ?
-A: We dont know. We are doing our best to incrase the compatibility but it is not our first priority.
+A: We dont know. We are doing our best to increase the compatibility but it is not our first priority.
    Perhaps we will release some compatibility version or patch, but nothing is planned.
 
 Q: List of compatible mods:
@@ -41,7 +45,24 @@ A: - ModLoader without installing the cv.class (tested)
    - Connected Texture Mod (should work, not tested)
    - Randomobs (should work, not tested)
    - Zombe's modpack without installing the gv.class (should work, not tested)
-
+   - Kaevator SuperSlopes (tested, bad results with Parallax mapping )
+   - TooManyItems (tested)
+   - ejhopkins WildGrass, WildLillies, WildVines (tested)
+   
+Q: WildGrass mods are listed as tested. Do they work with Waving Grass?
+A: Yes, but you will have to use the modlader TERRAIN version of the mods. Note that you will need a
+    texture pack that supports WildGrass to get any texture to show.
+    Using the regular Modloader version of the mod will give you textures on the WildGrass blocks
+    regardless of the TP, but you won't get the waving.
+    
+Q: How do I create maps for the new Environment Reflection thingy ?
+A: This work almost like the specular map. The RGB channels will contain the picture that should be
+    reflected, spreading across the whole canvas, while the Alpha channel will get the "reflectivity factor"
+    of the various Minecraft textures.
+    Variations between full black to full white will be taken into account.
+    IMPORTANT : Do not use full black (0%) value in the Alpha channel. Doing so will result in the corresponding
+    RGB value to be discard by the PNG. Instead, use 1% black value.
+    
 Q: Minecraft Error XXX:
 A: Please do not complain :p
 
