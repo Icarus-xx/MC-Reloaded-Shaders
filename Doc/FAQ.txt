@@ -42,6 +42,8 @@ A: - ModLoader without installing the cv.class (tested)
    - Randomobs (should work, not tested)
    - Zombe's modpack without installing the gv.class (should work, not tested)
 
-Q: Minecraft Error XXX:
-A: Please do not complain :p
+Q: Minecraft Error: java.lang.NullPointerException
+	at java.util.Arrays.sort(Arrays.java:1091)
+	at Shaders.findFinalShaders(Shaders.java:109)
+A: The shaders directory is not present, please copy the shaders directory in the .minecraft directory.
 
